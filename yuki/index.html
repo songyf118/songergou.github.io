@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            text-align: center;
+            font-size: 20px;
+            color: gray;
+        }
+
+        ul li {
+            list-style: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var data = "汽车を待つ君の横で仆は,kishya wo matsu kimi no yoko de boku wa,时计を気にしてる,tokei wo ki ni shi te ru,季节はずれの雪が降ってる,kisetsu hazure no yuki ga futteru,东京で见る雪はこれが最后ねと,tokyo de miru yuki wa korega saigone to,さみしそうに君がつぶやく,samishisou ni kimi ga tsubuyaku,なごり雪も降るときを知り,nagori yuki mo furu toki mo shiri,ふざけすぎた季节のあとで,fuzake sugita kisetsu no ato de,今 春が来て君はきれいになった,ima haru ga kite kimi wa kirei ni natta,去年よりずっときれいになった,kyonen yori zutto kirei ni natta,动き始めた汽车の窓に颜をつけて,ugoki hajimeta kishya no mado ni kao wo tsukete,君は何か言おうとしている,kimi wa nanika iwou to shiteiru,君のくちびるがさようならと动くことが,kimi no kuchibiru ga sayounara to ugoku koto ga,こわくて下をむいてた,kowakute shita wo muiteta,时がゆけば幼ない君も,toki ga yukeba osanai kimi mo,大人になると気づかないまま,otona ni naru to kizukanai mama,今 春が来て君はきれいになった,ima haru ga kite kimi wa kirei ni natta,去年よりずっときれいになった,kyonen yori zutto kirei ni natta,君が去ったホームにのこり,kimi ga satta houmu ni nokori,落ちてはとける雪を见ていた,ochitewa tokeru yuki wo miteita,今 春が来て君はきれいになった,ima haru ga kite kimi wa kirei ni natta,去年よりずっときれいになった,kyonen yori zutto kirei ni natta,去年よりずっときれいになった,kyonen yori zutto kirei ni natta,去年よりずっときれいになった,kyonen yori zutto kirei ni natta";
+            var datas = data.split(",");
+            var dd = document.getElementById("dd");
+            var txt;
+            for (var i = 0; i < datas.length; i++) {
+                var li = document.createElement("li");
+                txt = datas[i];
+                li.innerHTML = txt;
+                if (i % 2 == 0) {
+                    li.style.color = "white"
+                }
+                dd.appendChild(li);
+            }
+            $("#b1").click(function () {
+                $("li:even").each(function () {
+                    $(this).toggle();
+                })
+
+            })
+            $("#b2").click(function () {
+
+                $("li:odd").each(function () {
+                    $(this).toggle();
+                })
+
+            })
+        }
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <button id="b1">N</button>
+        <button id="b2">S</button>
+    </div>
+</br>
+    <audio src="a.mp3" controls loop>
+        浏览器不支持
+    </audio>
+    <div>
+        <ul id="dd">
+        </ul>
+    </div>
+
+</body>
+
+</html>
